@@ -46,10 +46,10 @@ playEl.addEventListener('click', function(){
     }else{
 
         finalResultEl.innerHTML = (`Hai scelto il numero ${userNumberEl}  <br> 
-         la tua scelta è stata  ${userChoiceEl } <br> 
-         il numero del computer è  ${computerNumber } <br> 
-         la somma dei due numeri è  ${addition}   che è un numero  ${additionValue } <br> 
-         PECCATO: HAI PERSO! `)
+                                    la tua scelta è stata  ${userChoiceEl } <br> 
+                                    il numero del computer è  ${computerNumber } <br> 
+                                    la somma dei due numeri è  ${addition}   che è un numero  ${additionValue } <br> 
+                                    PECCATO: HAI PERSO! `)
     }
    
 })    
