@@ -12,9 +12,63 @@ btnEL.addEventListener('click' , function(){
 
 })
 
+// ---------------------------------------------------------------------------------------------
+let playEl = document.getElementById('play');
+let finalResultEl = document.getElementById('final-result');
+
+playEl.addEventListener('click', function(){
+    
+    let userChoiceEl = document.getElementById('user-choice').value;
+    let userNumberEl = document.getElementById('user-number').value;
+    console.log(userNumberEl);
+    console.log(userChoiceEl);
 
 
 
+    let computerNumber = randomNumber();
+    console.log(computerNumber);
+
+    let addition = parseInt(userNumberEl)  + parseInt(computerNumber);
+    console.log(addition);
+    
+
+    let additionValue = isEvenAndOdd(addition);
+    console.log(additionValue)
+
+    if(userChoiceEl == additionValue){
+
+        finalResultEl.innerHTML = (`Hai scelto il numero ${userNumberEl}  <br> 
+                                   la tua scelta è stata  ${userChoiceEl } <br> 
+                                   il numero del computer è  ${computerNumber } <br> 
+                                   la somma dei due numeri è  ${addition}   che è un numero  ${additionValue } <br> 
+                                   COMPLIMENTI: HAI VINTO! `)
+
+    }else{
+
+        finalResultEl.innerHTML = (`Hai scelto il numero ${userNumberEl}  <br> 
+         la tua scelta è stata  ${userChoiceEl } <br> 
+         il numero del computer è  ${computerNumber } <br> 
+         la somma dei due numeri è  ${addition}   che è un numero  ${additionValue } <br> 
+         PECCATO: HAI PERSO! `)
+    }
+   
+})    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ---------------------- FUNCTIONS -------------------------------------------
 
 function isPalindrom(word){
     
@@ -42,4 +96,20 @@ function isPalindrom(word){
         return result;
     }
 
+}
+
+function randomNumber(){
+
+    let number = Math.floor(Math.random() * 5 + 1); 
+    return number;
+}
+
+
+function isEvenAndOdd(number){
+
+    if(number % 2 == 0){
+        return 'pari';
+    }else{
+        return 'dispari';
+    }
 }
